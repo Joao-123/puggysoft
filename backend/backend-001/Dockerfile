@@ -4,7 +4,7 @@ RUN apt-get install openjdk-8-jdk -y
 COPY . .
 RUN ./gradlew bootJar --no-daemon
 
-FROM openjdk-8-jdk-slim
+FROM openjdk:8-jdk-slim
 EXPOSE 8080
 COPY --from=build /build/libs/*.jar app.jar
 
