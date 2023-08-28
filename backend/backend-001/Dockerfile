@@ -4,14 +4,8 @@ RUN apt-get install openjdk-8-jdk -y
 COPY . .
 RUN ./gradlew bootJar --no-daemon
 
-RUN ls
-RUN ls /build
-RUN ls build/
-RUN ls /build/libs
-RUN ls build/libs/
-
 FROM openjdk-8-jdk-slim
 EXPOSE 8080
-COPY --from-build /build/libs/java-spring-puggysoft.jar app.jar
+COPY --from-build /build/libs/*.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
