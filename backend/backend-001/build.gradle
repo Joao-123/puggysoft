@@ -33,12 +33,18 @@ dependencies {
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-test {
-  // useJUnitPlatform()
-  testLogging {
-        events 'PASSED', 'STARTED', 'FAILED', 'SKIPPED'
-    }
+tasks.withType<Test> {
+  useJUnitPlatform()
 }
+
+tasks.jar { enabled = false }
+
+// test {
+//   // useJUnitPlatform()
+//   testLogging {
+//         events 'PASSED', 'STARTED', 'FAILED', 'SKIPPED'
+//     }
+// }
 
 checkstyle {
   toolVersion = '7.7'
