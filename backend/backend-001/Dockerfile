@@ -8,4 +8,4 @@ FROM openjdk:8-jdk-slim
 EXPOSE 8080
 COPY --from=build /build/libs/java-spring-puggysoft.jar app.jar
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar", "--spring.profiles.active=production"]
