@@ -40,12 +40,6 @@ test {
     }
 }
 
-tasks.withType<Test> {
-  useJUnitPlatform()
-}
-
-tasks.jar { enabled = false }
-
 checkstyle {
   toolVersion = '7.7'
   configFile = file("${rootProject.rootDir}/checkstyle/google_checks.xml")
