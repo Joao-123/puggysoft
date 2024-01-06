@@ -5,7 +5,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN gradle clean build
+RUN gradle bootJar --no-daemon
 # run
 FROM openjdk:8-jre-slim-buster
 
