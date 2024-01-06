@@ -9,7 +9,7 @@ RUN gradle bootJar --no-daemon
 # run
 FROM openjdk:8-jre-slim-buster
 
-EXPOSE 8080
+EXPOSE 8080:8080
 
 RUN mkdir -p /app/
 COPY --from=build /app//build/libs/java-spring-puggysoft.jar /app/java-spring-puggysoft.jar
